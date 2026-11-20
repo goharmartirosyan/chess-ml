@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-11-18T08:32:48.652307+00:00",
+  "source_archives": [
+    "lichess_db_standard_rated_2017-04.pgn.zst",
+    "lichess_db_standard_rated_2017-06.pgn.zst",
+    "lichess_db_standard_rated_2017-07.pgn.zst",
+    "lichess_db_standard_rated_2018-02.pgn.zst"
+  ],
+  "kind": "Stronger simple pre-reply classification baseline; development only",
+  "label": "Saved immediate remaining-damage ratio >=0.75, original mistake-maker perspective.",
+  "primary_probability_metric": "Brier score",
+  "cutoff": 0.5,
+  "primary_contrast": "simple_plus_maia_lightgbm versus simple_lightgbm",
+  "secondary_check": "Same two-feature logistic regression with and without Maia.",
+  "allowlists": {
+    "simple_lightgbm": [
+      "initial_damage",
+      "opponent_elo"
+    ],
+    "simple_plus_maia_lightgbm": [
+      "initial_damage",
+      "opponent_elo",
+      "maia_preserving_reply_probability"
+    ],
+    "simple_logistic": [
+      "initial_damage",
+      "opponent_elo"
+    ],
+    "simple_plus_maia_logistic": [
+      "initial_damage",
+      "opponent_elo",
+      "maia_preserving_reply_probability"
+    ],
+    "raw_maia": [
+      "maia_preserving_reply_probability"
+    ],
+    "training_majority_prevalence": []
+  },
+  "lightgbm_fixed_params": {
+    "objective": "binary",
+    "n_estimators": 240,
+    "learning_rate": 0.04,
+    "num_leaves": 11,
+    "min_child_samples": 90,
+    "reg_lambda": 7,
+    "verbosity": -1
+  },
+  "logistic_params": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "class_weight": null
+  },
+  "seed": 1701,
+  "jobs": 2,
+  "bootstrap_repeats": 2000,
+  "preprocessing": "Median imputer with missing indicators inside training folds. Logistic additionally uses training-fold StandardScaler. No feature selection, calibration, class weighting, threshold selection or hyperparameter search.",
+  "controls": "Only initial_damage (pp) and opponent_elo (reply-maker rating). No actual reply, future horizon, game result, post-reply evaluation or identity is a predictor.",
+  "reference": "Fixed shallow LightGBM classifier provides nonlinear effects and interaction of the two controls. Same fixed settings for the augmented classifier. Binary objective is used only in this separate experiment; frozen regressors remain unchanged.",
+  "folds": "Reuse original three game-fold validation assignments, restricted to four earlier archives. Player check purges whole training games sharing held-out players before filtering the missing-label rows, as in the existing four-archive protocol.",
+  "eligibility": "15,851 labeled replies /4,472 games for all methods. 102 missing replies excluded.",
+  "intervals": "Paired percentile game-cluster bootstrap of fixed held-out predictions, 2000 draws, seed 1701. Positive Brier/log-loss improvement = baseline minus augmented; positive accuracy/balanced-accuracy gains = augmented minus baseline. Conditional on fitted models; no bootstrap refits or multiplicity adjustment.",
+  "robustness": ">25 and >30 subsets of the same primary >20 predictions; no refits.",
+  "source_sha256": {
+    "development_with_multipv.csv": "aca96c1cdcd20ea654dbca181acf69aa5d9396a89fc2bbb95532ee88189653e6",
+    "notebook_runs/final_optuna_development_20261117_v1/outer_fold_assignments.csv": "98f0613732bfcca0d02632674152e531d58470eadfb82db05525621ec0bd340b",
+    "notebook_runs/maia_reply_subgroups_development_20261118_v1/classified_replies_with_subgroups.csv.gz": "91e157e8c60860eec8f51b38c2e6bebd8ef9905614d5e4bed2f149cd2ccb82bc",
+    "notebook_runs/maia_reply_subgroups_development_20261118_v1/protocol.json": "e733f28d4702c58ffb86eab1d7810b3b3359866a4030dffd0175fec3be2fea19",
+    "notebook_runs/maia_reply_subgroups_development_20261118_v1/artifact_manifest.json": "e3b6c3c0de581506d0ceb6bdbb5c31e31b638d7044cb967ff38ea3eadd466b09",
+    "notebook_runs/maia_reply_subgroups_development_20261118_v1/validation.json": "a0431dabb19fd9dc9458ff5c955e13e0b748d4b10ea21830d8043495bd4e55f5",
+    "notebook_runs/maia_reply_classification_development_20261117_v1/evaluation_predictions.csv.gz": "8c0ac1b4bdabf0af70ab2f652b2d7d4cd7a487e02ab7c9e11119b5d58ce25adb",
+    "notebook_runs/maia_reply_classification_development_20261117_v1/classification_metrics.csv": "c85d6a3695408e8437da8573c4e7e665964ee2e3f40c3f31cea00966193252ba",
+    "notebook_runs/maia_bounded_four_archive_20261117_v1/regression_protocol.json": "fd3023b69146df10ce9d46ac4d6061a88580366016fb9ee1fb3c42452c1407da",
+    "config.json": "6f80a740b76f3823fb172865418372a8385e30666ce169bca4ee62e9251d1822",
+    "my_tuning/selected.json": "64ccb2cbe92cb3009113f1e6f03692afd52bb1687d092690cdeaf69d1ff5a46c",
+    "tune_chess.py": "0844c653976f14e780265b75a99f699971ef86a33a4e323692ef6e7dac3ec769",
+    "scripts/test_bounded_maia_regression.py": "4e24bde301707c02dfbf5bddd6a31ebbd753ae9f455895ea0e84f62d1fe8b13a",
+    "scripts/tune_recovery_threshold.py": "b4a0dff4cde1e0aaae375586d02d05703cfe51a7ca9f289eea90304fdeca381e",
+    "scripts/report_maia_reply_classification.py": "312d54bda79e48effa25a7144fdb75ca6525068602c04feae1ba38d7d2e12384",
+    "scripts/compare_simple_reply_baseline.py": "0dfab9cabcda34a224dc9089e1faf43109e5d570f74a83b9916db93a03ca9ebc"
+  },
+  "versions": {
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.6.0"
+  }
+}

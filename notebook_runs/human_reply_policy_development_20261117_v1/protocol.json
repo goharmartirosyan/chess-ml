@@ -1,0 +1,99 @@
+{
+  "created_utc": "2026-11-17T14:01:59.806928+00:00",
+  "kind": "Development-only pre-reply human-policy mass over all damage-preserving legal replies",
+  "source_archives": [
+    "lichess_db_standard_rated_2017-04.pgn.zst",
+    "lichess_db_standard_rated_2017-06.pgn.zst",
+    "lichess_db_standard_rated_2017-07.pgn.zst",
+    "lichess_db_standard_rated_2018-02.pgn.zst",
+    "lichess_db_standard_rated_2019-02.pgn.zst"
+  ],
+  "sample_per_archive": 100,
+  "sample_mistakes": 500,
+  "sample_games": 469,
+  "seed": 1701,
+  "sampling": "100 mistake rows per archive (or CLI count), seed 1701; sampled from all canonical rows without reading actual opponent replies or future outcomes. Month-balanced pilot, not a population-weighted prevalence estimate.",
+  "event": "(historical win_before - Stockfish19 winning chance after candidate reply) / historical initial_damage >= 0.75, from original mistake-maker perspective",
+  "probability": "Sum frozen Maia-2 full-precision legal-move probabilities over ALL legal replies satisfying the event. No top-k truncation, no residual unscored mass.",
+  "policy_inputs": [
+    "post_mistake_fen",
+    "opponent_elo (active)",
+    "mistake_maker_elo (other)"
+  ],
+  "routing": "Released Blitz for Blitz/Bullet, Rapid for Rapid/Classical/Correspondence; otherwise initial+40*increment <480 -> Blitz. All non-Blitz/Rapid domains flagged.",
+  "clocks": "Policy does not condition on live clocks. Opponent pre-reply clock is metadata only.",
+  "package_versions": {
+    "maia2": "0.11.0",
+    "torch": "2.8.0",
+    "numpy": "2.5.5",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.6.1",
+    "chess": "1.11.2",
+    "matplotlib": "3.9.4"
+  },
+  "package_file_sha256": {
+    "model.py": "be0d8c59775be9cfaa1c86af3bb401812c6b68210427687b1ab2172eb5b8046b",
+    "inference.py": "21223bd69bd9fbc8feb5a40a6faf3158b49cb6a9152501f9b0796bf013309d70",
+    "utils.py": "17b06f923a5d2c7dad47d248f6ecd07e21661bd8ce1995c013a2dfc77b3d808f",
+    "main.py": "b4e26c99a3a919218971be443d4c27065b65714c20a075f35fb074d14f723665",
+    "configs/maia2-training.yaml": "4b06a5e6917dba8a55defaf3947ce97a73edca3ae2c9d225779a620353c1371b"
+  },
+  "model_assets": "/Users/goharmartirosyan/Documents/chess/notebook_runs/human_reply_policy_development_20261117_v1/model_assets",
+  "model_sha256": {
+    "rapid": "65aae8465eed5e65df66a24ea7370715579f9e5435098d06fe18bdb1e267e997",
+    "blitz": "5090d5d0d49dc29787c08d13febbed5b2da81a18c2ddcd8a90070cd3b43c44b2"
+  },
+  "documented_pretraining_window": [
+    "2018-05",
+    "2023-11"
+  ],
+  "external_pretraining_caveat": "2019-02 may overlap model pretraining; raw/calibrated results for the four earlier archives are reported separately. This is a documented-date check, not an independently verified training-game membership audit. External model training players are not guaranteed disjoint from evaluation players.",
+  "stockfish": {
+    "name": "Stockfish 19",
+    "author": "the Stockfish developers (see AUTHORS file)"
+  },
+  "stockfish_sha256": "8eed61129d1493c5d1f2fd9323f0c54c47ac49319911fbde18c6b9c87e8b13c5",
+  "depth": 18,
+  "threads": 1,
+  "hash_mb": 64,
+  "mate_score_cp": 1000,
+  "terminal_chances": [
+    0,
+    50,
+    100
+  ],
+  "workers": 8,
+  "planned_reply_branches": 16299,
+  "unique_child_positions": 16299,
+  "engine_cache_policy": "Read-only reuse of existing exact-FEN Stockfish19 depth18 evaluations; remaining unique children use the same binary/settings at depth18. New search processes retain TT within 32-position batches, matching the legacy warm-cache approach. Only the NEW output cache is written.",
+  "evaluation": "Actual reply/results read only AFTER all pre-reply predictions are saved. Reuse original game outer assignments. Fixed sigmoid probability calibration fits only other outer-training games, with player purge in the player protocol. No Optuna, classification cutoff selection or primary-model changes.",
+  "evaluation_scopes": [
+    "all_five_exploratory",
+    "predates_documented_pretraining"
+  ],
+  "calibration": "LogisticRegression C=1, logit(raw policy mass), training-only; known probability endpoints 0 and 1 preserved exactly.",
+  "bootstrap_repeats": 2000,
+  "bootstrap": "Paired percentile game-cluster intervals on saved OOF probability errors, conditional on fixed folds/model. No refitting within bootstrap.",
+  "source_sha256": {
+    "development_with_multipv.csv": "aca96c1cdcd20ea654dbca181acf69aa5d9396a89fc2bbb95532ee88189653e6",
+    "notebook_runs/opponent_reply_targets_development_v1/manifest.json": "6300e2ae2147a9fad72389b35d854ded67a9eb73732c7746105c8f145688b481",
+    "notebook_runs/opponent_reply_targets_development_v1/positions.sqlite": "17a8f10fbd53e1a214f4a9e3684c7db025ec66cbf397e2a9a9deaab104a03931",
+    "notebook_runs/opponent_reply_targets_development_v1/reply_targets.csv": "c7dec063d2398b50e0883027cd0caf0089c3b766d29346fa409260853a8f1783",
+    "notebook_runs/pre_reply_features_development_20261117_v1/reply_agreement_positions.csv": "d26b750497fa0e4425b6857751fe0a2fc0072a0ea5dc93664b6b5beff3da9959",
+    "config.json": "6f80a740b76f3823fb172865418372a8385e30666ce169bca4ee62e9251d1822",
+    "my_tuning/selected.json": "64ccb2cbe92cb3009113f1e6f03692afd52bb1687d092690cdeaf69d1ff5a46c",
+    "notebook_runs/final_optuna_development_20261117_v1/outer_fold_assignments.csv": "98f0613732bfcca0d02632674152e531d58470eadfb82db05525621ec0bd340b",
+    "scripts/human_reply_policy.py": "e3930acf4c91030581a9812b2f538c06c06f0874f46a038be774d4449b6fd9f6",
+    "scripts/evaluate_human_reply_policy.py": "de19af77b4cb4ce5389566b2dee66aa8eddfd44f205ffc1cc81f2d106541c38b",
+    "notebook_runs/opponent_reply_targets_development_v1/positions.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limitations": [
+    "The probability is an estimate from a human-move model, not ground-truth human behavior.",
+    "Exact aggregation means every legal move is scored under the defined depth18 procedure; Stockfish estimates themselves are finite-search approximations.",
+    "Damage denominator and win_before come from historical engine evaluations of unrecorded version.",
+    "Maia-2 rating bins collapse ratings below 1100 and at/above 2000; no clock conditioning.",
+    "Bullet, classical, correspondence, low clocks and early plies can be outside training domain.",
+    "FEN reconstruction cannot recover earlier repetition history; PGN outcomes are not used to fill missing opponent replies. Primary horizon targets remain unchanged."
+  ]
+}
