@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-21",
+  "working_directory": "Repository root",
+  "purpose": "One-time final evaluation; recorded only, not executed.",
+  "required_commit": "Audit must identify a commit whose source/configuration file contents match the freeze.",
+  "evaluation_authorized": false,
+  "executed": false,
+  "python_runtime_record": "freeze/modeling_runtime.json",
+  "input_protocol_sha256": "c5b7790df4573d43261283c238f6b5108df8c2d9f50fced6b5017544f8e65333",
+  "input_manifest_sha256": "919449d3e5b381d856dda6b1db3b6d361be80dedc023ed8da4319c135aaf4845",
+  "argv": [
+    ".venv-final-evaluation/bin/python",
+    "scripts/frozen_chess_evaluation.py",
+    "evaluate-prepared",
+    "--bundle",
+    "frozen_artifacts/development_20261121_v2",
+    "--input-manifest",
+    "test_data/march_2025_enriched_v1/input_manifest.json",
+    "--out",
+    "final_evaluation/march_2025_once_v1",
+    "--allow-final-test"
+  ]
+}

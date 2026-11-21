@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-21",
+  "output_directory": "test_data/march_2025_enriched_v1",
+  "evaluation_authorized": false,
+  "authorization": "Complete the already-authorized input preparation, including separate label construction; no research-model inference or performance scoring.",
+  "code_sha256": {
+    "scripts/finish_sealed_test_preparation.py": "fac6f0b04116d73e6bbdc56df0916c9024fac7132e0fd70297cd448b6207b2ca",
+    "scripts/enrich_sealed_test_features.py": "fbd5fda47fa5106b7e5ac5ee734c619d62c040f6dda4f3990bc5628fea8b9424",
+    "tests/test_enrich_sealed_test_features.py": "7d0fa52f48aa5b3cad5c02bdc052f5bcea97bab96ad0de311a35b788b0383963",
+    "tests/test_sealed_preparation_export.py": "3bdfd089aaf6b59a0bf3c32eb63bd7d5a1ef214a4287caf1b0afbe734e949f4f",
+    "tests/test_finish_sealed_test_preparation.py": "1d12cbf81531aeac5579fbb30dd1f63e86837d311b052279ecc0bc2f05e0d14f"
+  },
+  "enrichment_synthetic_tests": 12,
+  "final_input_status_to_preserve": "unresolved"
+}
