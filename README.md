@@ -1,4 +1,4 @@
-# Predicting human exploitation of chess mistakes
+# Predicting Human Exploitation of Chess Mistakes Using Machine Learning
 
 > To what extent can machine learning predict whether a human chess player will capitalize on an opponent’s serious mistake, both immediately and over subsequent moves?
 
@@ -6,7 +6,7 @@ This project studies human play after Stockfish identifies a serious mistake: a 
 
 ## Main models and results
 
-The final evaluation used a separate March 2025 sample after models, features and thresholds were frozen.
+The final evaluation was **completed once on 21 November 2026**, using a separate March 2025 sample after models, features and thresholds were frozen. The [execution record](final_evaluation/march_2025_once_v1/run_provenance.json) documents completion; status flags in `freeze/` describe the historical pre-test stage.
 
 | Model or comparison | What it predicts | Final-test result |
 | --- | --- | --- |
@@ -39,6 +39,8 @@ The [exported datasets](dataset_exports/final_models_20261122_v1/) are:
 Training CSVs contain identifiers, approved predictors and targets. The [frozen model configuration](freeze/approved_models.json) specifies the predictors; target and identifier columns are not model inputs. The exported test files match the hashes in the [frozen test input manifest](test_data/march_2025_enriched_v1/input_manifest.json). The test cohort is a supplied partial March extract, rather than the full month. CSVs are not required to run the results notebooks.
 
 ## Code and execution records
+
+[MODEL_WEIGHTS.json](MODEL_WEIGHTS.json) contains a compact summary of the frozen LightGBM hyperparameters and the classification cutoff; it does not contain fitted weights. The original fitted pipelines are stored locally in `frozen_artifacts/development_20261121_v2/`. [The export script](scripts/export_frozen_model_weights.py) generates the hyperparameter summary from the frozen configuration.
 
 - [scripts/frozen_chess_evaluation.py](scripts/frozen_chess_evaluation.py): fits the eight final LightGBM models on development data and implements the frozen evaluation and baselines. The [methods record](METHODOLOGY.md) documents features and settings; [run_provenance.json](final_evaluation/march_2025_once_v1/run_provenance.json) records the executed command, commit, versions and hashes.
 - [tune_chess.py](tune_chess.py) and [scripts/final_optuna_comparison.py](scripts/final_optuna_comparison.py): development regression comparisons and exploratory tuning; [saved development commands](notebook_runs/final_optuna_development_20261117_v1/COMMANDS.md) identify the runs.
