@@ -37,7 +37,7 @@
     "freeze/test_completion_protocol.json": "a51037ccf88d0a9b965144a44699f21a3caf064afe3719e18cb49e8cffd19dab",
     "freeze/test_enrichment_protocol.json": "0c295b2311953f4a09f4c3ed4cc8621307d053a2bdcebe0ee7a5081cf9fdcfaf",
     "freeze/test_enrichment_status.json": "1b7415f80e4e726c28b3246d94be26bdd119a45188ba41a8eeead111b93b2ba6",
-    "freeze/test_readiness_audit.json": "00e55fba83924dffee63c0c501c4a2d17efa451601d59eeba1e76144b6777107",
+    "freeze/test_readiness_audit.json": "bbca0dad6b97632f07b60e734129d9a117effb001a692101770c1e9d4a250080",
     "freeze/validation_summary.json": "730645318412463d8d9b58ce12d9bef3fe4c3f1becfffc2a4bd7f9529c9a45f7"
   },
   "document_sha256": {

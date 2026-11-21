@@ -24,12 +24,10 @@
   },
   "data_ready_for_scoring": true,
   "final_input_recipe_frozen": true,
-  "committed_freeze_reference": null,
-  "final_freeze_ready": false,
+  "committed_freeze_reference": "bbe496325c83b8695a52cb1b93896ed4e8a34768",
+  "final_freeze_ready": true,
   "final_evaluation_authorized": false,
-  "blockers": [
-    "The final source/configuration freeze awaits a user-created commit; no commit was made by this audit."
-  ],
+  "blockers": [],
   "model_predictions_run": false,
   "provenance_limitations": [
     "The original extraction command and Stockfish binary/version are not independently logged. The source defaults are recorded, and the user confirmed unchanged filters; this is not independent certification of the original search limit or binary.",
