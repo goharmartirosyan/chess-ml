@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-21",
+  "status": "prepared_data_checks_passed",
+  "prepared_rows": 3380,
+  "checks": {
+    "feature_schema": true,
+    "label_schema": true,
+    "row_alignment": true,
+    "row_identity": true,
+    "fixed_eligibility": true,
+    "multipv_semantics": true,
+    "maia_bounds_and_midpoint": true,
+    "target_equations": true,
+    "missing_reply_handling": true,
+    "legal_reply_coverage": true,
+    "game_overlap_absent": true,
+    "fitted_artifacts_unchanged": true,
+    "source_hashes_verified": true,
+    "input_manifest_verified": true,
+    "modeling_environment_verified": true,
+    "original_inputs_unchanged": true,
+    "base_tables_unchanged": true,
+    "final_evaluation_not_started": true
+  },
+  "data_ready_for_scoring": true,
+  "final_input_recipe_frozen": true,
+ 
+  "blockers": [
+    "The final source/configuration freeze awaits a user-created commit; no commit was made by this audit."
+  ],
+  "model_predictions_run": false,
+  "provenance_limitations": [
+    "The original extraction command and Stockfish binary/version are not independently logged. The source defaults are recorded, and the user confirmed unchanged filters; this is not independent certification of the original search limit or binary.",
+    "The supplied source identifies a March-2025 partial PGN. Original full-PGN sampling/ranges and upstream selection are unrecorded. The evaluation cohort is defined by the fixed source CSV hashes and eligibility rules, not a claim to represent the entire March archive."
+  ],
+  "performance_metrics_computed": false,
+  "distributions_inspected": false,
+  "prepared_directory": "test_data/march_2025_enriched_v1",
+  "input_manifest_sha256": "919449d3e5b381d856dda6b1db3b6d361be80dedc023ed8da4319c135aaf4845"
+}

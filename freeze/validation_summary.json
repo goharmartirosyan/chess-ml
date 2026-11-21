@@ -1,0 +1,534 @@
+{
+  "date": "2026-11-21",
+  "models_fitted": 8,
+  "synthetic_tests": {
+    "status": "passed",
+    "count": 15,
+    "command": "python -m unittest tests.test_frozen_chess_evaluation -v",
+    "test_source_sha256": "6fcbd46f57030de35cf58fa930d7220d22576df0c180eeeb78551b75a34fc39f"
+  },
+  "development_reproduction": {
+    "status": "passed",
+    "scope": "Saved game outer fold 1; development only",
+    "train_rows": 15538,
+    "heldout_rows": 7629,
+    "train_games": 4341,
+    "heldout_games": 2171,
+    "game_overlap": 0,
+    "model_reproductions": [
+      {
+        "model": "primary_10",
+        "matched_rows": 7629,
+        "max_absolute_difference": 1.4210854715202004e-14
+      },
+      {
+        "model": "primary_2",
+        "matched_rows": 7629,
+        "max_absolute_difference": 4.440892098500626e-16
+      },
+      {
+        "model": "primary_4",
+        "matched_rows": 7629,
+        "max_absolute_difference": 7.105427357601002e-15
+      },
+      {
+        "model": "primary_6",
+        "matched_rows": 7629,
+        "max_absolute_difference": 3.552713678800501e-15
+      },
+      {
+        "model": "ten_control",
+        "matched_rows": 5269,
+        "max_absolute_difference": 1.4210854715202004e-14
+      },
+      {
+        "model": "ten_maia",
+        "matched_rows": 5269,
+        "max_absolute_difference": 1.4210854715202004e-14
+      },
+      {
+        "model": "reply_control",
+        "matched_rows": 5231,
+        "max_absolute_difference": 5.551115123125783e-17
+      },
+      {
+        "model": "reply_maia",
+        "matched_rows": 5231,
+        "max_absolute_difference": 1.1102230246251565e-16
+      }
+    ],
+    "bootstrap_repeats": 2000,
+    "configuration_sha256": "01d6e0bcf1be2702fa3d14871e44030ba901ee57633a5aa9f3ae15cf1e51ae5a",
+    "versions": {
+      "python": "3.9.6",
+      "system": "Darwin",
+      "machine": "arm64",
+      "lightgbm_native_sha256": {
+        "lib_lightgbm.dylib": "50f62eef76a25c7dbd5b79c998d59a5dff4874c595f7fb8d197826c2bfbd8a92"
+      },
+      "packages": {
+        "numpy": "2.0.2",
+        "pandas": "2.3.3",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.6.1",
+        "lightgbm": "4.6.0",
+        "joblib": "1.5.3",
+        "threadpoolctl": "3.7.0",
+        "python-dateutil": "3.0.0",
+        "pytz": "2026.6",
+        "tzdata": "2026.6",
+        "six": "1.15.0",
+        "chess": "1.11.2"
+      }
+    },
+    "test_access": false,
+    "source_hashes": {
+      "development_with_multipv.csv": "aca96c1cdcd20ea654dbca181acf69aa5d9396a89fc2bbb95532ee88189653e6",
+      "notebook_runs/maia_bounded_four_archive_20261117_v1/maia_bounds_features.csv": "0bab47adb3dc063365abc34437c17fb16aa796bfdb48f010daf2a2e64ca4dd1d",
+      "notebook_runs/opponent_reply_targets_development_v1/reply_targets.csv": "c7dec063d2398b50e0883027cd0caf0089c3b766d29346fa409260853a8f1783",
+      "notebook_runs/final_optuna_development_20261117_v1/outer_fold_assignments.csv": "98f0613732bfcca0d02632674152e531d58470eadfb82db05525621ec0bd340b"
+    }
+  },
+  "policy_reproduction": {
+    "status": "passed",
+    "scope": "First original 32-position nonpilot development batch per checkpoint",
+    "inference_batch_size": 32,
+    "absolute_probability_tolerance": 1e-06,
+    "python": "3.12.12",
+    "packages": {
+      "maia2": "0.11.0",
+      "torch": "2.8.0",
+      "numpy": "2.5.5",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.6.1",
+      "chess": "1.11.2",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.8.0",
+      "einops": "0.8.2",
+      "gdown": "5.2.2",
+      "pyzstd": "0.19.1",
+      "requests": "2.34.2",
+      "pyyaml": "6.0.3",
+      "tqdm": "4.70.1"
+    },
+    "asset_sha256": {
+      "package/model.py": "be0d8c59775be9cfaa1c86af3bb401812c6b68210427687b1ab2172eb5b8046b",
+      "package/inference.py": "21223bd69bd9fbc8feb5a40a6faf3158b49cb6a9152501f9b0796bf013309d70",
+      "package/utils.py": "17b06f923a5d2c7dad47d248f6ecd07e21661bd8ce1995c013a2dfc77b3d808f",
+      "package/main.py": "b4e26c99a3a919218971be443d4c27065b65714c20a075f35fb074d14f723665",
+      "package/configs/maia2-training.yaml": "4b06a5e6917dba8a55defaf3947ce97a73edca3ae2c9d225779a620353c1371b",
+      "rapid_checkpoint": "65aae8465eed5e65df66a24ea7370715579f9e5435098d06fe18bdb1e267e997",
+      "blitz_checkpoint": "5090d5d0d49dc29787c08d13febbed5b2da81a18c2ddcd8a90070cd3b43c44b2"
+    },
+    "inference_reproductions": [
+      {
+        "row_index": 0,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 45
+      },
+      {
+        "row_index": 1,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 38
+      },
+      {
+        "row_index": 2,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 37
+      },
+      {
+        "row_index": 3,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 42
+      },
+      {
+        "row_index": 4,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 44
+      },
+      {
+        "row_index": 5,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 45
+      },
+      {
+        "row_index": 6,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 8
+      },
+      {
+        "row_index": 7,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 32
+      },
+      {
+        "row_index": 9,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 35
+      },
+      {
+        "row_index": 10,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 34
+      },
+      {
+        "row_index": 11,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 7
+      },
+      {
+        "row_index": 12,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 40
+      },
+      {
+        "row_index": 17,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 35
+      },
+      {
+        "row_index": 20,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 34
+      },
+      {
+        "row_index": 21,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 34
+      },
+      {
+        "row_index": 22,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 36
+      },
+      {
+        "row_index": 23,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 22
+      },
+      {
+        "row_index": 24,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 24
+      },
+      {
+        "row_index": 25,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 13
+      },
+      {
+        "row_index": 26,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 18
+      },
+      {
+        "row_index": 27,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 11
+      },
+      {
+        "row_index": 28,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 30
+      },
+      {
+        "row_index": 29,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 45
+      },
+      {
+        "row_index": 30,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 40
+      },
+      {
+        "row_index": 31,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 36
+      },
+      {
+        "row_index": 32,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 36
+      },
+      {
+        "row_index": 33,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 43
+      },
+      {
+        "row_index": 34,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 43
+      },
+      {
+        "row_index": 35,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 48
+      },
+      {
+        "row_index": 36,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 19
+      },
+      {
+        "row_index": 37,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 16
+      },
+      {
+        "row_index": 38,
+        "policy": "blitz",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 15
+      },
+      {
+        "row_index": 8,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 42
+      },
+      {
+        "row_index": 13,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 45
+      },
+      {
+        "row_index": 14,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 32
+      },
+      {
+        "row_index": 15,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 37
+      },
+      {
+        "row_index": 16,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 3
+      },
+      {
+        "row_index": 79,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 42
+      },
+      {
+        "row_index": 80,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 33
+      },
+      {
+        "row_index": 81,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 33
+      },
+      {
+        "row_index": 82,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 39
+      },
+      {
+        "row_index": 83,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 46
+      },
+      {
+        "row_index": 84,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 31
+      },
+      {
+        "row_index": 85,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 38
+      },
+      {
+        "row_index": 86,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 39
+      },
+      {
+        "row_index": 87,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 39
+      },
+      {
+        "row_index": 189,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 32
+      },
+      {
+        "row_index": 211,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 50
+      },
+      {
+        "row_index": 233,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 41
+      },
+      {
+        "row_index": 234,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 37
+      },
+      {
+        "row_index": 235,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 33
+      },
+      {
+        "row_index": 236,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 39
+      },
+      {
+        "row_index": 247,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 60
+      },
+      {
+        "row_index": 248,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 36
+      },
+      {
+        "row_index": 249,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 27
+      },
+      {
+        "row_index": 250,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 18
+      },
+      {
+        "row_index": 251,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 37
+      },
+      {
+        "row_index": 252,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 21
+      },
+      {
+        "row_index": 253,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 27
+      },
+      {
+        "row_index": 254,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 32
+      },
+      {
+        "row_index": 255,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 24
+      },
+      {
+        "row_index": 256,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 17
+      },
+      {
+        "row_index": 292,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 33
+      },
+      {
+        "row_index": 293,
+        "policy": "rapid",
+        "max_absolute_probability_difference": 0.0,
+        "legal_moves": 37
+      }
+    ],
+    "bounded_rows": 15953,
+    "maximum_bound_width": 0.0249993115217991,
+    "source_sha256": {
+      "notebook_runs/maia_bounded_four_archive_20261117_v1/pre_reply_inputs.csv": "8a0782afb54a4bdf138ed57d818e59cda8dd8f999e17804b504518e9d63bdd9c",
+      "notebook_runs/maia_bounded_four_archive_20261117_v1/human_move_probabilities.jsonl": "645684bd6b25063566d05700fd0ab02adcbc6d97a0b96fc0c340fa6476acc22f",
+      "notebook_runs/maia_bounded_four_archive_20261117_v1/maia_bounds_features.csv": "0bab47adb3dc063365abc34437c17fb16aa796bfdb48f010daf2a2e64ca4dd1d",
+      "scripts/human_reply_policy.py": "e3930acf4c91030581a9812b2f538c06c06f0874f46a038be774d4449b6fd9f6",
+      "scripts/validate_frozen_maia_policy.py": "05e28cbb21d2ff702c267d100bc2d01952b83c651bbcf9cea27e7f768c5a202f"
+    },
+    "engine_calls": 0,
+    "test_access": false
+  },
+  "final_input_status": "unresolved",
+  "final_test_access_enabled": false,
+  "final_test_executed": false,
+  "commits_created": false,
+  "blockers": [
+    "Original per-archive game ranges/sample size and rating/time-control filters are not verified in the saved manifests.",
+    "The exact core extraction engine/cache protocol and approved prepared-input lineage must be recorded before final access.",
+    "Finalize the archive-specific preparation entry point after resolving the extraction protocol.",
+    "The new implementation has not been committed, following the user instruction; exact source hashes are recorded."
+  ],
+  "snapshot_phase": "Development-model validation before authorized March input preparation; access/freeze flags in this snapshot describe that earlier phase.",
+  "current_readiness_record": "freeze/test_readiness_audit.json"
+}

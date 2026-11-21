@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "status": "models_and_prepared_test_inputs_frozen_awaiting_user_commit_and_final_run_authorization",
+  "base_commit": "e5de7253ceb6777b4bcec23a876b3dbcd2108178",
+  "new_implementation_commit": null,
+  "commit_status": "Uncommitted; user will commit.",
+  "code_sha256": {
+    "scripts/frozen_chess_evaluation.py": "09e87398cd50f1773b6c5285c7cdf89e240c8223a26b8352ae33fdc87aabdb51",
+    "scripts/validate_frozen_chess_evaluation.py": "79fec324e8c77693d80f2348c8d4c158ff464dddd07fb22f1262f8eae7ea8f45",
+    "scripts/validate_frozen_maia_policy.py": "05e28cbb21d2ff702c267d100bc2d01952b83c651bbcf9cea27e7f768c5a202f",
+    "tests/test_frozen_chess_evaluation.py": "6fcbd46f57030de35cf58fa930d7220d22576df0c180eeeb78551b75a34fc39f",
+    "scripts/prepare_sealed_test_csvs.py": "9fb481a87af426eedc287542d7d8d29256be7afb2d4dfba01ad9abf6fda48a0c",
+    "tests/test_prepare_sealed_test_csvs.py": "5e38bef44641fef7ed8e964af89add514ee50b67be63f63236a0f6a8ecc79a3e",
+    "scripts/enrich_sealed_test_features.py": "fbd5fda47fa5106b7e5ac5ee734c619d62c040f6dda4f3990bc5628fea8b9424",
+    "scripts/finish_sealed_test_preparation.py": "fac6f0b04116d73e6bbdc56df0916c9024fac7132e0fd70297cd448b6207b2ca",
+    "tests/test_enrich_sealed_test_features.py": "7d0fa52f48aa5b3cad5c02bdc052f5bcea97bab96ad0de311a35b788b0383963",
+    "tests/test_sealed_preparation_export.py": "3bdfd089aaf6b59a0bf3c32eb63bd7d5a1ef214a4287caf1b0afbe734e949f4f",
+    "tests/test_finish_sealed_test_preparation.py": "1d12cbf81531aeac5579fbb30dd1f63e86837d311b052279ecc0bc2f05e0d14f",
+    "scripts/audit_sealed_test_readiness.py": "05c50515d382c01da17a9ffec05614a2ed0a6c3a54dbbe677e87945e25f3ae3e",
+    "tests/test_audit_sealed_test_readiness.py": "ad8bbae77ccc18168b1546a6872c5a9cf95bb37b70e168d79c302e88f2e66fce"
+  },
+  "freeze_records_sha256": {
+    "freeze/README.md": "48403cca2f15f9360ad431df39507ede58ad5336efb9b5add9667cf6852c1e68",
+    "freeze/approved_models.json": "01d6e0bcf1be2702fa3d14871e44030ba901ee57633a5aa9f3ae15cf1e51ae5a",
+    "freeze/engine_identity.json": "6835882c3bdd6c756385bacb34d028c9809f261c23d0731421f920adf8ff223f",
+    "freeze/environment-modeling.json": "95b0f19f8df29edfbf3e665768ab8dafefd3b2fd5ff31c195554898187a47b78",
+    "freeze/environment-policy.json": "66720ad87eb93e53cf650157bc49c2fa27d9a92b83d0aff32579a17caf35d28b",
+    "freeze/extraction_source_reference.json": "d452f3a3126aa46bd1dc7cef6615e1bc615974a1ff8a1a363c2249fef3988462",
+    "freeze/final_evaluation_invocation.json": "1913bfbc513f964ee6292e70022c62f1d7c7be5edc42cddf4a37b67fa4400dcc",
+    "freeze/final_input_protocol.json": "c5b7790df4573d43261283c238f6b5108df8c2d9f50fced6b5017544f8e65333",
+    "freeze/fitted_models.json": "b1061ccaf5a136680aa4a11d1fd058817a2955d6db44d7b95deade7304ef2a5e",
+    "freeze/integrity_audit.json": "e93d1a6c1e43844cf15aa63b29c936717bcf8c24a27b41b478dbcbbb5f428474",
+    "freeze/modeling_runtime.json": "6e2bd1afca119b8dcd988f2fa8cac1f9a5070778ea86f12e4cad0c9c102d897c",
+    "freeze/requirements-modeling.txt": "ef66a91b43b54fa97af6d7750458964109dc0ccf434ce6b10e2c7907934ee51d",
+    "freeze/requirements-policy.txt": "0446d12f33514855afd74af677c4fd11cbd843517cda694c8116df728887f61b",
+    "freeze/test_completion_protocol.json": "a51037ccf88d0a9b965144a44699f21a3caf064afe3719e18cb49e8cffd19dab",
+    "freeze/test_enrichment_protocol.json": "0c295b2311953f4a09f4c3ed4cc8621307d053a2bdcebe0ee7a5081cf9fdcfaf",
+    "freeze/test_enrichment_status.json": "b80d5d9c33a6deac9e4d7291fac9c45ee9d0cd50a126bc8224c89b717353ecb3",
+    "freeze/test_readiness_audit.json": "f77d173c4b3c06153c19ebe633cfbc6ed1e527ce4225f92a04400e57f32ca6de",
+    "freeze/validation_summary.json": "730645318412463d8d9b58ce12d9bef3fe4c3f1becfffc2a4bd7f9529c9a45f7"
+  },
+  "document_sha256": {
+    "MARCH_2025_EVALUATION_PLAN.md": "61094cb45cf4337f40c778d601404dbac83e98c29b41175977b2e895d2610b37",
+    "MARCH_2025_EVALUATION_APPENDIX.md": "4392acf00ab6a9906a0dd2cdc7665d54f032794ba34b9025183a9e57c318db93",
+    ".gitignore": "81af9321906f9064701f27df803ba0d8bb0169e18c6b041ab96a1ca60873abd1"
+  },
+  "historical_source_sha256": {
+    "scripts/extract_bad_moves.py": "71988820f1bed93fd8438e839f3a68bc0175afae780cccbb5f227ae1be20b5f7",
+    "prepare_chess_modeling.py": "332d2d4cdae2bdef9c357d445e0a336e19690078c0845e72c5068538fe8a0436",
+    "extract_post_mistake_multipv.py": "029d83064252f9dae80d1819d0f83e735db098c758cb2c0ded3b65b1d1c58c17",
+    "scripts/extract_opponent_reply_targets.py": "09afc7b273dbebf5449f28712ffd64635edb193f8e76a4ed2f4b2a48167190d6",
+    "tune_chess.py": "0844c653976f14e780265b75a99f699971ef86a33a4e323692ef6e7dac3ec769",
+    "scripts/human_reply_policy.py": "e3930acf4c91030581a9812b2f538c06c06f0874f46a038be774d4449b6fd9f6",
+    "scripts/scale_bounded_maia_feature.py": "709c0c85dc3905d09d0ca91bfc32f3382881002339bc3b7d20ab92e3405dd503",
+    "scripts/test_bounded_maia_regression.py": "4e24bde301707c02dfbf5bddd6a31ebbd753ae9f455895ea0e84f62d1fe8b13a",
+    "scripts/compare_simple_reply_baseline.py": "0dfab9cabcda34a224dc9089e1faf43109e5d570f74a83b9916db93a03ca9ebc",
+    "notebook_runs/final_optuna_development_20261117_v1/protocol.json": "91b61e96726dfc4872678de894132b62ec2039de9443f9ef6c037d48e2200a11",
+    "notebook_runs/maia_bounded_four_archive_20261117_v1/protocol.json": "135fff0b5c7564f1adc738071dcbd1d96ce6053f079eb2e9d073ba45f797d10a",
+    "notebook_runs/maia_bounded_four_archive_20261117_v1/regression_protocol.json": "fd3023b69146df10ce9d46ac4d6061a88580366016fb9ee1fb3c42452c1407da",
+    "notebook_runs/simple_reply_baseline_development_20261118_v1/protocol.json": "fbbdbcd011a75d2627f48a103d28387f5af711e4583a1ecf9454e484d46fcc3b",
+    "notebook_runs/human_reply_policy_development_20261117_v1/protocol.json": "4f4ece4c1e7be87b5dfd6ad07b14e3311724bd41f029f912515464d6a7ca7bae"
+  },
+  "local_model_bundle": "frozen_artifacts/development_20261121_v2",
+  "bundle_manifest_sha256": "81934a77bf1d2889b6e6a026dde3894db4b6780ce748e70e615cc25960a2c51f",
+  "final_test_access_enabled": false,
+  "final_test_executed": false,
+  "commits_created": false,
+  "previous_manifest_sha256": "2f6c9355e207a2e7baea9fb00111aebaded7049b5f1ef6d68853f3778770aa97",
+  "test_preparation": {
+    "authorized": true,
+    "evaluation_authorized": false,
+    "status_record": "freeze/test_preparation_status.json",
+    "models_modified": false,
+    "distributions_inspected": false
+  },
+  "test_enrichment": {
+    "authorization": "feature and separate label preparation only",
+    "protocol": "freeze/test_enrichment_protocol.json",
+    "completion_protocol": "freeze/test_completion_protocol.json",
+    "runtime_status": "test_data/march_2025_enriched_v1/preparation_status.json",
+    "fitted_research_model_predictions": false,
+    "performance_metrics": false,
+    "synthetic_tests_passed": 12
+  },
+  "local_provenance_sha256": {
+    "test_data/march_2025_prepared_v2/provenance/source_inputs.json": "ab5a7dc9808ef8ca729dd9925fe1add1e69b215a957fcaa168e534ad755f4eaa",
+    "test_data/march_2025_prepared_v2/provenance/source_inputs_original.json": "13ce3f212cc6e09d937bc591cc2795d9e6942f7fbf79c94ead0e372e37c93483",
+    "test_data/march_2025_prepared_v2/provenance/source_inputs_v1.json": "72a74f67a9b0908d96a9f050caaf93c3473c9d269a170ae39c3a0d01298a98df",
+    "test_data/march_2025_prepared_v2/provenance/base_preparation_status.json": "2467087f4cb1a0fd82fed453c7e7c44301c55cbaf42cdb6d94fa372c62a8d38f"
+  }
+}
