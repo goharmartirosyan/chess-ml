@@ -24,7 +24,9 @@
   },
   "data_ready_for_scoring": true,
   "final_input_recipe_frozen": true,
- 
+  "committed_freeze_reference": null,
+  "final_freeze_ready": false,
+  "final_evaluation_authorized": false,
   "blockers": [
     "The final source/configuration freeze awaits a user-created commit; no commit was made by this audit."
   ],
@@ -36,5 +38,5 @@
   "performance_metrics_computed": false,
   "distributions_inspected": false,
   "prepared_directory": "test_data/march_2025_enriched_v1",
-  "input_manifest_sha256": "919449d3e5b381d856dda6b1db3b6d361be80dedc023ed8da4319c135aaf4845"
+  "input_manifest_sha256": "f994a548409648ac877a397846eb1bfbbaaf366e1ee3d4244e4a76aadcf54f20"
 }

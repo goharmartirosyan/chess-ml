@@ -6,8 +6,8 @@
   "evaluation_authorized": false,
   "executed": false,
   "python_runtime_record": "freeze/modeling_runtime.json",
-  "input_protocol_sha256": "c5b7790df4573d43261283c238f6b5108df8c2d9f50fced6b5017544f8e65333",
-  "input_manifest_sha256": "919449d3e5b381d856dda6b1db3b6d361be80dedc023ed8da4319c135aaf4845",
+  "input_protocol_sha256": "e4641288627e8c44d593259e4d36b4fc10d3d4c985e524317a2a0f8a5705c6f9",
+  "input_manifest_sha256": "f994a548409648ac877a397846eb1bfbbaaf366e1ee3d4244e4a76aadcf54f20",
   "argv": [
     ".venv-final-evaluation/bin/python",
     "scripts/frozen_chess_evaluation.py",

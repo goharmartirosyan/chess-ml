@@ -27,8 +27,8 @@
     "freeze/environment-modeling.json": "95b0f19f8df29edfbf3e665768ab8dafefd3b2fd5ff31c195554898187a47b78",
     "freeze/environment-policy.json": "66720ad87eb93e53cf650157bc49c2fa27d9a92b83d0aff32579a17caf35d28b",
     "freeze/extraction_source_reference.json": "d452f3a3126aa46bd1dc7cef6615e1bc615974a1ff8a1a363c2249fef3988462",
-    "freeze/final_evaluation_invocation.json": "1913bfbc513f964ee6292e70022c62f1d7c7be5edc42cddf4a37b67fa4400dcc",
-    "freeze/final_input_protocol.json": "c5b7790df4573d43261283c238f6b5108df8c2d9f50fced6b5017544f8e65333",
+    "freeze/final_evaluation_invocation.json": "e5355a335ab0296fa4b218c3f582e6feb23a04bdd5daee42fce944c0fcd7006e",
+    "freeze/final_input_protocol.json": "e4641288627e8c44d593259e4d36b4fc10d3d4c985e524317a2a0f8a5705c6f9",
     "freeze/fitted_models.json": "b1061ccaf5a136680aa4a11d1fd058817a2955d6db44d7b95deade7304ef2a5e",
     "freeze/integrity_audit.json": "e93d1a6c1e43844cf15aa63b29c936717bcf8c24a27b41b478dbcbbb5f428474",
     "freeze/modeling_runtime.json": "6e2bd1afca119b8dcd988f2fa8cac1f9a5070778ea86f12e4cad0c9c102d897c",
@@ -36,8 +36,8 @@
     "freeze/requirements-policy.txt": "0446d12f33514855afd74af677c4fd11cbd843517cda694c8116df728887f61b",
     "freeze/test_completion_protocol.json": "a51037ccf88d0a9b965144a44699f21a3caf064afe3719e18cb49e8cffd19dab",
     "freeze/test_enrichment_protocol.json": "0c295b2311953f4a09f4c3ed4cc8621307d053a2bdcebe0ee7a5081cf9fdcfaf",
-    "freeze/test_enrichment_status.json": "b80d5d9c33a6deac9e4d7291fac9c45ee9d0cd50a126bc8224c89b717353ecb3",
-    "freeze/test_readiness_audit.json": "f77d173c4b3c06153c19ebe633cfbc6ed1e527ce4225f92a04400e57f32ca6de",
+    "freeze/test_enrichment_status.json": "1b7415f80e4e726c28b3246d94be26bdd119a45188ba41a8eeead111b93b2ba6",
+    "freeze/test_readiness_audit.json": "00e55fba83924dffee63c0c501c4a2d17efa451601d59eeba1e76144b6777107",
     "freeze/validation_summary.json": "730645318412463d8d9b58ce12d9bef3fe4c3f1becfffc2a4bd7f9529c9a45f7"
   },
   "document_sha256": {
@@ -70,7 +70,7 @@
   "test_preparation": {
     "authorized": true,
     "evaluation_authorized": false,
-    "status_record": "freeze/test_preparation_status.json",
+    "status_record": "test_data/march_2025_prepared_v2/provenance/base_preparation_status.json",
     "models_modified": false,
     "distributions_inspected": false
   },
