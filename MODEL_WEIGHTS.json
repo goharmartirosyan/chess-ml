@@ -1,0 +1,15 @@
+{
+  "shared_lightgbm_parameters": {
+    "n_estimators": 240,
+    "learning_rate": 0.04,
+    "num_leaves": 11,
+    "min_child_samples": 90,
+    "reg_lambda": 7,
+    "verbosity": -1,
+    "random_state": 1701,
+    "n_jobs": 2
+  },
+  "regression_objective": "regression_l1",
+  "classification_objective": "binary",
+  "classification_probability_cutoff": 0.5
+}

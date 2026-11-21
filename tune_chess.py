@@ -5,8 +5,6 @@ Install: python3 -m pip install pandas numpy scipy scikit-learn lightgbm
 Run tuning: python3 tune_chess.py --input development_with_multipv.csv --config config.json --out my_tuning
 Run a chosen config: python3 tune_chess.py --input development_with_multipv.csv --config config.json --out my_cv --mode evaluate --chosen my_tuning/selected.json
 
-Warning: evaluation on the same development archives used for tuning is exploratory,
-not independent confirmation. Keep March 2025 sealed until all choices are frozen.
 """
 import argparse
 import itertools
