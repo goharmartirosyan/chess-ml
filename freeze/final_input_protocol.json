@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "status": "frozen",
+  "source_archive": "2025-03",
+  "game_ranges_or_sampling": {
+    "mode": "All rows in the five user-designated immutable CSV extracts, deduplicated and filtered with the frozen primary rules; no new sampling.",
+    "input_roster": "test_data/march_2025_prepared_v2/provenance/source_inputs.json",
+    "original_pgn_start_max_ranges": "Unrecorded; cannot be inferred as complete extraction ranges from mistake rows.",
+    "input_roster_sha256": "ab5a7dc9808ef8ca729dd9925fe1add1e69b215a957fcaa168e534ad755f4eaa"
+  },
+  "rating_filters": {
+    "extractor_filter": null,
+    "evidence": "Extractor has no rating filter",
+    "upstream_partial_pgn_selection": "Not independently documented."
+  },
+  "time_control_filters": {
+    "extractor_filter": null,
+    "evidence": "Extractor has no time-control filter",
+    "upstream_partial_pgn_selection": "Not independently documented."
+  },
+  "core_engine_and_cache_protocol": {
+    "legacy_core_evaluations": {
+      "mode": "Reuse unchanged evaluations in the five user-provided CSV extracts; this preparation does not rerun core/horizon extraction.",
+      "source_implementation": "scripts/extract_bad_moves.py",
+      "implementation_record": "freeze/extraction_source_reference.json",
+      "documented_defaults": {
+        "depth": 18,
+        "mate_cp": 1000,
+        "time": null,
+        "nodes": null
+      },
+      "original_engine_binary_version_and_sha256": null,
+      "original_invocation": "Unrecorded; default filters confirmed by the user.",
+      "limitation": "No independent certification of the original binary or full-PGN sampling is claimed."
+    },
+    "new_feature_and_actual_reply_evaluations": {
+      "recorded_reply_version": "Stockfish 19",
+      "sha256": "8eed61129d1493c5d1f2fd9323f0c54c47ac49319911fbde18c6b9c87e8b13c5",
+      "depth": 18,
+      "threads": 1,
+      "hash_mb": 64,
+      "core_mate_cp": 1000,
+      "legacy_multipv_mate_cp": 100000,
+      "multipv": 5
+    },
+    "new_feature_cache_and_batch_policy": "test_data/march_2025_enriched_v1/protocol.json",
+    "selection_and_data_contract": "Use all supplied unique rows passing the fixed rules. Fixed source CSV hashes define the evaluation cohort; no fresh archive extraction or post-result sampling."
+  },
+  "intermediate_lineage": {
+    "base_preparation": "test_data/march_2025_prepared_v2/preparation_manifest.json",
+    "feature_preparation": "test_data/march_2025_enriched_v1/protocol.json",
+    "feature_preparation_sha256": "626a20a2e2dd022179c8d8aa8cb1aeefa84ec81eac2cf45b78a1e42a931e7346",
+    "prepared_features": {
+      "path": "test_data/march_2025_enriched_v1/features.csv",
+      "sha256": "ec8a66c4a20bc28dd339206e66f97e05d2e03f348760ea9bd3a6b15fab986d09"
+    },
+    "prepared_labels": {
+      "path": "test_data/march_2025_enriched_v1/labels.csv",
+      "sha256": "d5b114507ac44152ea349cfb449570e969284ff9a2fa0b18b5b197da5277a418"
+    }
+  },
+  "blockers": [],
+  "legacy_test_intermediates_authorized": true,
+  "authorization_scope": "Supplied March extracts: preparation only, authorized 2026-11-21. No prediction or evaluation.",
+  "base_preparation_protocol": "test_data/march_2025_prepared_v2/provenance/source_inputs_original.json",
+  "base_preparation_manifest": "test_data/march_2025_prepared_v2/preparation_manifest.json",
+  "user_identified_extraction_source": "freeze/extraction_source_reference.json",
+  "primary_selection": {
+    "win_before_min": 10,
+    "win_before_max": 90,
+    "initial_damage_strictly_above": 20
+  },
+  "freeze_date": "2026-11-21",
+  "input_mode": "Use the exact authorized existing CSV extracts and prepared tables; no fresh archive extraction or sampling.",
+  "provenance_limitations": [
+    "The original extraction command and Stockfish binary/version are not independently logged. The source defaults are recorded, and the user confirmed unchanged filters; this is not independent certification of the original search limit or binary.",
+    "The supplied source identifies a March-2025 partial PGN. Original full-PGN sampling/ranges and upstream selection are unrecorded. The evaluation cohort is defined by the fixed source CSV hashes and eligibility rules, not a claim to represent the entire March archive."
+  ],
+  "release_requirements": [
+    "User-created commit containing the final source/configuration freeze.",
+    "Separate explicit user authorization for the one-time evaluation."
+  ],
+  "evaluation_authorized": false,
+  "base_preparation_protocol_sha256": "13ce3f212cc6e09d937bc591cc2795d9e6942f7fbf79c94ead0e372e37c93483"
+}

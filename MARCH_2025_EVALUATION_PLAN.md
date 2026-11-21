@@ -1,6 +1,12 @@
+# March 2025 evaluation plan
+
+**Updated 2026-11-21.** Approved models are fitted. Feature/label preparation and structural checks are complete. Final evaluation awaits the user-created freeze commit and explicit authorization.
+
 ## Data and target
 
 Train on **2017-04, 2017-06, 2017-07, 2018-02 and 2019-02** for the primary comparison. The three secondary comparisons use the **four earlier archives, excluding 2019-02**. Fit all preprocessing on the corresponding development training data. Evaluate all listed comparisons together once on the sealed **2025-03** archive, with identical eligible test rows within each comparison.
+
+The test cohort is **3,380 eligible mistakes / 955 games** from the five supplied CSVs of the March 2025 partial extract. Freeze their hashes and prepared tables; perform no new sampling. The original extraction binary and full-PGN sampling are unrecorded limitations, detailed in the appendix.
 
 Keep `10 <= win_before <= 90`, `initial_damage >20` percentage points and Stockfish **depth 18**. Primary target: `change_in_damage_h = win_after - win_after_h`, at **2/4/6/10 subsequent plies**, always from the original mistake-maker's perspective. Retain the existing terminal-target rules. Missing actual replies are excluded from immediate-reply scoring.
 
@@ -23,4 +29,6 @@ ROC-AUC uses continuous scores. Use **2,000 paired whole-game bootstrap samples*
 
 ## Before the one-time run
 
-Fit and hash only the listed models/preprocessing; lock the exact test-input/extraction protocol and evaluator. Current repository reference: `0c0185aa2e21daa12e1d89f882f29db0f5ec6a02`; untracked code is identified by appendix hashes. The final evaluator and fitted-artifact versions remain pending. Date/record the completed freeze, then obtain the user's explicit authorization for the one-time evaluation. **This revision changes documentation only; March 2025 remains unopened.**
+Eight model/preprocessing pipelines are fitted on their full declared development cohorts. Their hashes, learned preprocessing and training-only baselines are in [the fitted-model record](freeze/fitted_models.json); source and environment versions are in [the code manifest](freeze/code_manifest.json). Validation reproduced all eight saved model predictions, passed 15 synthetic tests, and exactly replayed 64 Maia policy positions.
+
+[The input protocol](freeze/final_input_protocol.json) freezes exact artifact reuse, selection, enrichment and label construction. The user confirmed unchanged extractor filters; preparation applies the stricter >20 rule. [The readiness audit](freeze/test_readiness_audit.json) verifies schemas, alignment, target equations, missing replies, feature bounds, game overlap, versions and hashes. Record the user-created freeze commit, then obtain explicit authorization for the one-time evaluation. [Technical appendix](MARCH_2025_EVALUATION_APPENDIX.md). **No fitted research-model predictions, final test or commit was run.**

@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "seed": 1701,
+  "jobs": 2,
+  "horizons": [
+    2,
+    4,
+    6,
+    10
+  ],
+  "primary_archives": [
+    "2017-04",
+    "2017-06",
+    "2017-07",
+    "2018-02",
+    "2019-02"
+  ],
+  "secondary_archives": [
+    "2017-04",
+    "2017-06",
+    "2017-07",
+    "2018-02"
+  ],
+  "features": {
+    "full": [
+      "eval_before_cp",
+      "initial_damage",
+      "player_elo",
+      "opponent_elo",
+      "move_number",
+      "player_clock_before_move",
+      "opponent_clock_before_move",
+      "initial_time_seconds",
+      "increment_seconds",
+      "material_balance_cp",
+      "number_of_pieces",
+      "hanging_pieces",
+      "opponent_hanging_pieces",
+      "king_attackers",
+      "opponent_king_attackers",
+      "reasonable_candidate_moves",
+      "eval_gap_best_second_cp",
+      "in_check",
+      "gives_check",
+      "is_capture",
+      "is_promotion",
+      "game_phase",
+      "multipv_good_reply_count_10pp",
+      "multipv_best_second_gap_pp"
+    ],
+    "reply_control": [
+      "initial_damage",
+      "opponent_elo"
+    ],
+    "maia": "maia_preserving_reply_probability"
+  },
+  "regression_params": {
+    "objective": "regression_l1",
+    "n_estimators": 240,
+    "learning_rate": 0.04,
+    "num_leaves": 11,
+    "min_child_samples": 90,
+    "reg_lambda": 7,
+    "verbosity": -1
+  },
+  "classifier_params": {
+    "objective": "binary",
+    "n_estimators": 240,
+    "learning_rate": 0.04,
+    "num_leaves": 11,
+    "min_child_samples": 90,
+    "reg_lambda": 7,
+    "verbosity": -1
+  },
+  "eligibility": {
+    "win_before_min": 10,
+    "win_before_max": 90,
+    "initial_damage_strictly_above": 20
+  },
+  "recovery_ratio_cutoff": 0.75,
+  "reply_probability_cutoff": 0.5,
+  "bootstrap_repeats": 2000,
+  "maia": {
+    "package": "0.11.0",
+    "torch": "2.8.0",
+    "coverage": 0.975,
+    "point": "L + residual_mass / 2",
+    "cpu": true,
+    "torch_threads": 4,
+    "rating_default": 1500,
+    "seed": 1701,
+    "blitz_sha256": "5090d5d0d49dc29787c08d13febbed5b2da81a18c2ddcd8a90070cd3b43c44b2",
+    "rapid_sha256": "65aae8465eed5e65df66a24ea7370715579f9e5435098d06fe18bdb1e267e997",
+    "inference_batch_size": 32,
+    "sort": "probability descending, UCI ascending",
+    "no_residual_renormalization": true,
+    "full_precision_legal_softmax": true,
+    "installed_package_file_sha256": {
+      "model.py": "be0d8c59775be9cfaa1c86af3bb401812c6b68210427687b1ab2172eb5b8046b",
+      "inference.py": "21223bd69bd9fbc8feb5a40a6faf3158b49cb6a9152501f9b0796bf013309d70",
+      "utils.py": "17b06f923a5d2c7dad47d248f6ecd07e21661bd8ce1995c013a2dfc77b3d808f",
+      "main.py": "b4e26c99a3a919218971be443d4c27065b65714c20a075f35fb074d14f723665",
+      "configs/maia2-training.yaml": "4b06a5e6917dba8a55defaf3947ce97a73edca3ae2c9d225779a620353c1371b"
+    }
+  },
+  "engine": {
+    "recorded_reply_version": "Stockfish 19",
+    "sha256": "8eed61129d1493c5d1f2fd9323f0c54c47ac49319911fbde18c6b9c87e8b13c5",
+    "depth": 18,
+    "threads": 1,
+    "hash_mb": 64,
+    "core_mate_cp": 1000,
+    "legacy_multipv_mate_cp": 100000,
+    "multipv": 5
+  },
+  "comparisons": [
+    "primary_regression",
+    "raw_maia_vs_majority",
+    "reply_control_vs_maia",
+    "ten_ply_control_vs_maia"
+  ]
+}
