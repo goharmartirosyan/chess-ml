@@ -26,14 +26,14 @@ Immediate replies are meaningfully predictable, while longer-term damage changes
 
 The **five development archives** are April, June and July 2017, February 2018 and February 2019. The **four earlier archives** exclude February 2019 and are used for the local Maia-2 comparisons. Raw Maia-2 itself was not trained on these local CSVs.
 
-The [exported datasets](dataset_exports/) are:
+Dataset CSVs are kept locally rather than published in this repository. Their paths and roles are listed below; the results notebooks run without these files.
 
 | CSV | Rows / games | Used for |
 | --- | ---: | --- |
-| [train_primary_five_archives.csv](dataset_exports/train_primary_five_archives.csv) | 23,167 / 6,512 | All four primary LightGBM regressors and their no-change/training-mean baseline reference cohort. |
-| [train_ten_ply_four_archives.csv](dataset_exports/train_ten_ply_four_archives.csv) | 15,953 / 4,485 | Matched 10-ply LightGBM comparison, with and without the Maia-2 probability. |
-| [train_immediate_reply_four_archives.csv](dataset_exports/train_immediate_reply_four_archives.csv) | 15,851 / 4,472 | Immediate-reply LightGBM comparison, with and without Maia-2, and the majority/prevalence reference. Excludes 102 missing development replies. |
-| [test_features.csv](dataset_exports/test_features.csv) | 3,380 / 955 | Frozen March 2025 inputs for all final comparisons. |
+| `dataset_exports/train_primary_five_archives.csv` | 23,167 / 6,512 | All four primary LightGBM regressors and their no-change/training-mean baseline reference cohort. |
+| `dataset_exports/train_ten_ply_four_archives.csv` | 15,953 / 4,485 | Matched 10-ply LightGBM comparison, with and without the Maia-2 probability. |
+| `dataset_exports/train_immediate_reply_four_archives.csv` | 15,851 / 4,472 | Immediate-reply LightGBM comparison, with and without Maia-2, and the majority/prevalence reference. Excludes 102 missing development replies. |
+| `dataset_exports/test_features.csv` | 3,380 / 955 | Frozen March 2025 inputs for all final comparisons. |
 
 
 Training CSVs contain identifiers, approved predictors and targets. The [frozen model configuration](freeze/approved_models.json) specifies the predictors; target and identifier columns are not model inputs.
@@ -43,6 +43,6 @@ Training CSVs contain identifiers, approved predictors and targets. The [frozen 
 Final training and evaluation commands are documented in [notebook_runs/COMMANDS.md](notebook_runs/COMMANDS.md).
 
 - [scripts/frozen_chess_evaluation.py](scripts/frozen_chess_evaluation.py): fits the eight final LightGBM pipelines and evaluates the four frozen comparisons.
-- [scripts/build_final_results_notebook.py](scripts/build_final_results_notebook.py): builds the final notebook from saved results.
+- [scripts/build_final_results_notebook.py](scripts/build_final_results_notebook.py): builds the final notebook from local saved-run artifacts; those reporting inputs are not included in a fresh clone.
 
-[Model settings](freeze/approved_models.json), [dependency versions](freeze/requirements-modeling.txt) and [important SHA-256 hashes](freeze/final_hashes.json) identify the final implementation and artifacts. The hash record contains no fitted weights. [METHODOLOGY.md](METHODOLOGY.md) describes the methods; the results notebooks contain the development and final-test evidence.
+[Model settings](freeze/approved_models.json), [dependency versions](freeze/requirements-modeling.txt) and [important SHA-256 hashes](freeze/final_hashes.json) identify the final implementation and artifacts. The hash record contains no fitted weights. Trained `.joblib` pipelines, Maia checkpoints, raw predictions and caches remain local; their hashes identify the exact artifacts used. Historical freeze records retain their pre-test status and paths, while `final_evaluation/run_provenance.json` records the completed evaluation. [METHODOLOGY.md](METHODOLOGY.md) describes the methods; the results notebooks contain the development and final-test evidence.

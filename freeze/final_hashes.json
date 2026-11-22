@@ -1,0 +1,31 @@
+{
+  "execution_commit": "729c8abd011c9dd2868c2fea2cc514f69823a474",
+  "frozen_source_commit": "bbe496325c83b8695a52cb1b93896ed4e8a34768",
+  "hash_algorithm": "SHA-256",
+  "source_and_configuration": {
+    "scripts/frozen_chess_evaluation.py": "09e87398cd50f1773b6c5285c7cdf89e240c8223a26b8352ae33fdc87aabdb51",
+    "freeze/approved_models.json": "01d6e0bcf1be2702fa3d14871e44030ba901ee57633a5aa9f3ae15cf1e51ae5a",
+    "freeze/final_input_protocol.json": "e4641288627e8c44d593259e4d36b4fc10d3d4c985e524317a2a0f8a5705c6f9",
+    "freeze/requirements-modeling.txt": "ef66a91b43b54fa97af6d7750458964109dc0ccf434ce6b10e2c7907934ee51d"
+  },
+  "fitted_model_bundle_manifest": "81934a77bf1d2889b6e6a026dde3894db4b6780ce748e70e615cc25960a2c51f",
+  "fitted_model_files": {
+    "primary_2.joblib": "91e3ffe8eaecec313cb2a7061dceeaf88a072efcadf788da0e09b785262ca59a",
+    "primary_4.joblib": "fa802e38b7fe3a592ac804b744a3d2ff5676ecf1815f9cbde17b52c3a148a0c6",
+    "primary_6.joblib": "2c209a5a12f4a765ca78a3abb3cfec23f245940f60182d3d03a66b2ec477662c",
+    "primary_10.joblib": "18a538fb50c364b7e4b9c07f3cdf54b9b2baa0a299453e5ff49e47f91c7bcdc2",
+    "ten_control.joblib": "78085751574d21e46a1841299d3ad9b062e195cfa10edb276d3ac9d15f998475",
+    "ten_maia.joblib": "7fe4e3ba7f62e60c0d15f8e6e0da7def65453d49ce4b88eb807a64696e87766b",
+    "reply_control.joblib": "b6297900e0ad5c8923627832386993275778a595eb710f16743b3171182b17bd",
+    "reply_maia.joblib": "5a2ac94f163f477c5aecc47aec41fbb402cd52a00d74074b98ea6ad6a4c9b236"
+  },
+  "test_input_manifest": "f994a548409648ac877a397846eb1bfbbaaf366e1ee3d4244e4a76aadcf54f20",
+  "test_input_files": {
+    "features": "ec8a66c4a20bc28dd339206e66f97e05d2e03f348760ea9bd3a6b15fab986d09",
+    "labels": "d5b114507ac44152ea349cfb449570e969284ff9a2fa0b18b5b197da5277a418"
+  },
+  "maia_checkpoints": {
+    "blitz": "5090d5d0d49dc29787c08d13febbed5b2da81a18c2ddcd8a90070cd3b43c44b2",
+    "rapid": "65aae8465eed5e65df66a24ea7370715579f9e5435098d06fe18bdb1e267e997"
+  }
+}

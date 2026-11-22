@@ -10,7 +10,7 @@ Raw Maia-2 achieved **73.69% accuracy, 72.87% balanced accuracy and 0.8102 ROC-A
 
 For the primary regression, LightGBM reduced no-change MAE by **0.21%, 0.93%, 1.54% and 2.36%** at 2/4/6/10 plies. The 2- and 4-ply intervals include zero; the 6- and 10-ply intervals are above zero. Spearman correlations were only **0.096–0.140**. The matched four-archive ten-ply Maia increment was positive but modest: **0.376914 pp MAE** (95% interval **[0.202856, 0.557825]**); augmented Spearman remained **0.1464**.
 
-The complete ordered feature list, learner settings, frozen baseline constants and unmodified method snapshots are in [METHODOLOGY.md](METHODOLOGY.md). The `freeze/` directory remains a pre-test snapshot; current run authorization/completion is recorded in this result directory.
+The complete ordered feature list, learner settings, frozen baseline constants and unmodified method snapshots are in [METHODOLOGY.md](../METHODOLOGY.md). The `freeze/` directory remains a pre-test snapshot; current run authorization/completion is recorded in this result directory.
 
 ## Cohorts, targets and fixed protocol
 
@@ -159,11 +159,11 @@ Archive sets: five-development and four-development cohorts listed above, compar
 | middlegame | 5,055 (21.82%) | 3,507 (21.98%) | 741 (21.92%) |
 | opening | 15,515 (66.97%) | 10,640 (66.70%) | 2,314 (68.46%) |
 
-The test cohort has more >=2000-rated mistake-makers (16.04% versus 9.00% in five-archive development), more Rapid (15.68% versus 3.79%) and very little Classical (2 mistakes from one game). These are cohort differences, not a basis for changing the frozen models. UltraBullet contains only **40 mistakes / 9 games** and is a small-sample/out-of-domain limitation, not a finding. No UltraBullet-specific cutoff or model was selected. Every exact recorded time-control distribution is included in the supplement and distribution CSV.
+The test cohort has more >=2000-rated mistake-makers (16.04% versus 9.00% in five-archive development), more Rapid (15.68% versus 3.79%) and very little Classical (2 mistakes from one game). These are cohort differences, not a basis for changing the frozen models. UltraBullet contains only **40 mistakes / 9 games** and is a small-sample/out-of-domain limitation, not a finding. No UltraBullet-specific cutoff or model was selected. Every exact recorded time-control distribution is embedded in the final-results notebook; the distribution CSV remains in the local run archive.
 
 ## 6. Robustness, subgroups and development context
 
-The >25 and >30 checks reuse subsets of the saved >20 predictions without refits. They contain 2,568 / 880 and 1,947 / 808 mistakes/games respectively; immediate scoring uses 2,547 / 876 and 1,927 / 800 after missing-reply exclusions. Every arm, interval and diagnostic is preserved in [SUPPLEMENT.md](SUPPLEMENT.md) and the labelled CSV files; no favorable threshold was substituted for >20.
+The >25 and >30 checks reuse subsets of the saved >20 predictions without refits. They contain 2,568 / 880 and 1,947 / 808 mistakes/games respectively; immediate scoring uses 2,547 / 876 and 1,927 / 800 after missing-reply exclusions. Every arm, interval and diagnostic is preserved in [the final-results notebook](../chess_final_results.ipynb) and the local labelled CSV files; no favorable threshold was substituted for >20.
 
 All **612 prespecified subgroup rows** are exported, including Elo, exact time control, recorded speed and phase, with sample/game counts and sparse-group flags. These are descriptive fixed-model diagnostics. Groups with fewer than 100 mistakes are flagged by the frozen code; small game counts can also make groups unreliable. Subgroups have no dedicated refits, cutoffs or multiplicity-adjusted inferential claims.
 

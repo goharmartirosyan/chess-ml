@@ -627,8 +627,7 @@ def notebook(payload):
     Separate horizon classifiers, tuned cutoffs, continuous Maia-weighted features and
     clock/agreement variants remain development-only in the development notebook.
 
-    Further detail: [final report](final_evaluation/march_2025_once_v1/REPORT.md),
-    [complete supplement](final_evaluation/march_2025_once_v1/SUPPLEMENT.md),
+    Complete supplementary tables are embedded above. Further detail: [final report](final_evaluation/REPORT.md),
     [methods](METHODOLOGY.md),
     [frozen evaluation plan](MARCH_2025_EVALUATION_PLAN.md),
     [development notebook](chess_development_results.ipynb).
