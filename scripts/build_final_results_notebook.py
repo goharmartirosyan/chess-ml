@@ -629,7 +629,7 @@ def notebook(payload):
 
     Further detail: [final report](final_evaluation/march_2025_once_v1/REPORT.md),
     [complete supplement](final_evaluation/march_2025_once_v1/SUPPLEMENT.md),
-    [methods](final_evaluation/march_2025_once_v1/METHODOLOGY.md),
+    [methods](METHODOLOGY.md),
     [frozen evaluation plan](MARCH_2025_EVALUATION_PLAN.md),
     [development notebook](chess_development_results.ipynb).
     These links are optional references; notebook execution does not open them.
@@ -662,7 +662,15 @@ def notebook(payload):
     return dict(cells=cells, metadata=dict(kernelspec=dict(display_name='Python 3', language='python', name='python3'),
         language_info=dict(name='python', version='3.9.6'), final_results=dict(
             execution_commit=payload['metadata']['execution_commit'], self_contained=True,
-            evaluation_rerun=False, source='Saved completed evaluation and development summaries')),
+            final_evaluation_status='completed', completed_on=payload['metadata']['executed'],
+            frozen_source_commit=payload['metadata']['frozen_source_commit'],
+            evaluation_rerun=False, source='Saved completed evaluation and development summaries'),
+        project_status=dict(updated_on=payload['metadata']['report_date'],
+            final_evaluation_status='completed', final_evaluation_completed_on=payload['metadata']['executed'],
+            frozen_source_commit=payload['metadata']['frozen_source_commit'],
+            execution_commit=payload['metadata']['execution_commit'],
+            completion_record='final_evaluation/march_2025_once_v1/completion.json',
+            execution_record='final_evaluation/march_2025_once_v1/run_provenance.json')),
         nbformat=4, nbformat_minor=5)
 
 

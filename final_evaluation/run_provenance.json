@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-21",
+  "status": "completed_and_reported",
+  "one_time": true,
+  "frozen_source_commit": "bbe496325c83b8695a52cb1b93896ed4e8a34768",
+  "execution_commit": "729c8abd011c9dd2868c2fea2cc514f69823a474",
+  "authorized_by": "Explicit user instruction in the session before execution",
+  "authorization_record_sha256": "7dc509afb15165c22b9e9ada84b602d778388d0c6bdf3f7c6734bd096f677a08",
+  "argv": [
+    ".venv-final-evaluation/bin/python",
+    "scripts/frozen_chess_evaluation.py",
+    "evaluate-prepared",
+    "--bundle",
+    "frozen_artifacts/development_20261121_v2",
+    "--input-manifest",
+    "test_data/march_2025_enriched_v1/input_manifest.json",
+    "--out",
+    "final_evaluation/march_2025_once_v1",
+    "--allow-final-test"
+  ],
+  "configuration_sha256": "01d6e0bcf1be2702fa3d14871e44030ba901ee57633a5aa9f3ae15cf1e51ae5a",
+  "evaluator_sha256": "09e87398cd50f1773b6c5285c7cdf89e240c8223a26b8352ae33fdc87aabdb51",
+  "input_manifest_sha256": "f994a548409648ac877a397846eb1bfbbaaf366e1ee3d4244e4a76aadcf54f20",
+  "input_protocol_sha256": "e4641288627e8c44d593259e4d36b4fc10d3d4c985e524317a2a0f8a5705c6f9",
+  "bundle_manifest_sha256": "81934a77bf1d2889b6e6a026dde3894db4b6780ce748e70e615cc25960a2c51f",
+  "versions": {
+    "python": "3.9.6",
+    "system": "Darwin",
+    "machine": "arm64",
+    "lightgbm_native_sha256": {
+      "lib_lightgbm.dylib": "50f62eef76a25c7dbd5b79c998d59a5dff4874c595f7fb8d197826c2bfbd8a92"
+    },
+    "packages": {
+      "numpy": "2.0.2",
+      "pandas": "2.3.3",
+      "scipy": "1.13.1",
+      "scikit-learn": "1.6.1",
+      "lightgbm": "4.6.0",
+      "joblib": "1.5.3",
+      "threadpoolctl": "3.7.0",
+      "python-dateutil": "3.0.0",
+      "pytz": "2026.6",
+      "tzdata": "2026.6",
+      "six": "1.15.0",
+      "chess": "1.11.2"
+    }
+  },
+  "raw_evaluator_output_sha256": {
+    "completion.json": "7944333fd8fa4a425887d439ab04e85836e7303b1a30b9b322c671efab87a6b4",
+    "development_vs_final_distributions.csv": "bcffc0e169b7e7b3abfa6ad38436939ccde7768cbeb4a4178120e8c5794d36d6",
+    "metrics.csv": "a219c1bf5f9c4c937f437c97e4e4a5dd864c0ec03d9125766f57cf238a198cb1",
+    "paired_game_intervals.csv": "8d573f67c44a8e3a14dafe0778fbc369cef2e71adb3e59851b0845346005eba7",
+    "predictions_before_labels.csv.gz": "3fc88c9c19d8e55f182c39eb714f295c82e54c7c23786c8467f594d0d665ad20",
+    "subgroups.csv": "3e1cdda51263ebe823c45d8a6ce3b533b7bc6d59d4dbc026aab8343e41293c5d"
+  },
+  "report_source_sha256": {
+    "notebook_runs/final_optuna_development_20261117_v1/compact_summary.csv": "4cc17ec9e923e228ee494d0e2768bffbc81c445070b5ec736bdc3131d237e186",
+    "notebook_runs/simple_reply_baseline_development_20261118_v1/classification_metrics.csv": "c7125da246aa45bf55e4b19043cb6a0a3fca097ef288f6bc83710d491debfd10",
+    "notebook_runs/maia_bounded_four_archive_20261117_v1/regression/change_in_damage_10ply/summary.csv": "78079d0548ab1d89d323f3ba5243e432ebfa34045407932dbaf6793a9b8152e8"
+  },
+  "original_frozen_artifacts_unchanged": true,
+  "no_retraining": true,
+  "no_cutoff_or_sample_selection": true,
+  "final_run_marker_present": true,
+  "verification": {
+    "saved_metric_rows_verified": 54,
+    "interval_rows": 72,
+    "subgroup_rows": 612,
+    "first_five_cluster_draws_verified": 55,
+    "maximum_absolute_numeric_difference": 5.10702591327572e-15,
+    "bootstrap_repeats": 2000,
+    "all_intervals_have_2000_valid_draws": true,
+    "inference_repeated": false,
+    "models_loaded_by_reporter": false,
+    "source_artifacts_modified": false
+  },
+  "final_evaluation_authorized": true,
+  "model_predictions_run": true,
+  "test_metrics_computed": true,
+  "models_retrained": false,
+  "reporting_inference_repeated": false,
+  "frozen_metadata_snapshot_sha256": {
+    "frozen_model_config.json": "01d6e0bcf1be2702fa3d14871e44030ba901ee57633a5aa9f3ae15cf1e51ae5a",
+    "fitted_models_snapshot.json": "b1061ccaf5a136680aa4a11d1fd058817a2955d6db44d7b95deade7304ef2a5e",
+    "final_input_protocol_snapshot.json": "e4641288627e8c44d593259e4d36b4fc10d3d4c985e524317a2a0f8a5705c6f9",
+    "evaluation_plan_snapshot.md": "61094cb45cf4337f40c778d601404dbac83e98c29b41175977b2e895d2610b37",
+    "recorded_invocation_snapshot.json": "e5355a335ab0296fa4b218c3f582e6feb23a04bdd5daee42fce944c0fcd7006e"
+  },
+  "original_report_build_preserved_in": "report_history/"
+}
